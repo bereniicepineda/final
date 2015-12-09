@@ -1,28 +1,51 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Agregar pelicula">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-          There is a fire in <b>sector 3</b>
-        </div>
-      </div>
+
+    <form name="agregarForm" novalidate>
+    <div class="list">
+    <label class="item item-input">
+      <span class="input-label">Nombre</span>
+      <input type="text" name="nombre" ng-model="pelicula.nombre" required>
+   </label>
+
+   <label class="item item-input">
+      <span class="input-label">Año</span>
+      <input type="text" name="año" ng-model="pelicula.año" required>
+   </label>
+
+   <label class="item item-input">
+      <span class="input-label">Genero</span>
+      <input type="text" name="genero" ng-model="pelicula.genero" required>
+   </label>
+
+   <label class="item item-input">
+      <span class="input-label">Sinopsis</span>
+      <input type="text" name="sinopsis" ng-model="pelicula.sinopsis" required>
+   </label>
+   
+    <label class="item item-input">
+      <span class="input-label">Actores</span>
+      <input type="text" name="actores" ng-model="pelicula.actores" required>
+   </label>
+   
+   </div>
+
+   <div class="padding">
+        <p ng-show="agregarForm.nombre.$error.required">Escriba el nombre de la pelicula</p>
+        <p ng-show="agregarForm.año.$error.required">Escriba el año de la pelicula</p>
+        <p ng-show="agregarForm.genero.$error.required">Escriba el genero de la pelicula</p>
+        <p ng-show="agregarForm.sinopsis.$error.required">Escriba la sinopsis de la pelicula </p>
+        <p ng-show="agregarForm.actores.$error.required">Escriba los actores de la pelicula </p>
+        
+        
+        <p>{{ statusMessage }}</p>
     </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>
+
+   <button type="button" class="button icon-left ion-compose button-positive" ng-disabled="agregarForm.$invalid" ng-click="guardar(pelicula)">
+      Guardar
+   </button>
+
+   </form>
+
   </ion-content>
 </ion-view>
