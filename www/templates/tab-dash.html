@@ -41,6 +41,8 @@
         <p>{{ statusMessage }}</p>
     </div>
 
+<input type="hidden" name= "id" ng-model="pelicula[0].id">
+
    <button type="button" class="button icon-left ion-compose button-positive" ng-disabled="agregarForm.$invalid" ng-click="guardar(pelicula)">
       Guardar
    </button>
