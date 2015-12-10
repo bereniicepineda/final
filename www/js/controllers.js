@@ -1,23 +1,23 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope,$ionicPopup, $timeout,$cordovaSQLite) {
-
+    
     $scope.showAlert = function() {
      var alertPopup = $ionicPopup.alert({
        title: 'Pelicula',
        template: 'Datos guardados'
      });
     }
-
+    
     $scope.guardar = function(pelicula){
-
+        
         $cordovaSQLite.execute(db, 'INSERT INTO peli (nombre,año,genero,sinopsis,actores) VALUES (?,?,?,?,?)', [pelicula.nombre,pelicula.año,pelicula.genero,pelicula.sinopsis,pelicula.actores])
         .then(function(result) {
             $scope.statusMessage = "Registro guardado!";
         }, function(error) {
             $scope.statusMessage = "Error al guardar: " + error.message;
         })
-
+        
         /*
         console.log("Nombre: "+persona.nombre);
         console.log("Apellido: "+persona.apellido);
@@ -25,7 +25,7 @@ angular.module('starter.controllers', [])
         console.log("Email: "+persona.email);
         */
     }
-
+    
 })
 
 .controller('ChatsCtrl', function($scope, Chats,$cordovaSQLite) {
@@ -39,14 +39,14 @@ angular.module('starter.controllers', [])
 
   $scope.chats = Chats.all();
   //$scope.chats = [];
-
+  
   /*
   $cordovaSQLite.execute(db, 'SELECT * FROM agenda ORDER BY id DESC')
        .then(
           function(result) {
              if (result.rows.length > 0) {
                       for(var i = 0; i < result.rows.length; i++)
-                      {
+                      { 
                         $scope.chats.push({"nombre":result.rows.item(i).nombre,
                                     "apellido":result.rows.item(i).apellido,
                                     "telefono":result.rows.item(i).telefono,
@@ -64,33 +64,32 @@ angular.module('starter.controllers', [])
   {
       $scope.chats = Chats.all();
   };
-
+  
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };
 })
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats,$cordovaSQLite) {
-
+  
   //$scope.chat = Chats.get($stateParams.chatId);
   $scope.persona = Chats.get($stateParams.chatId);
-
+  
   $scope.guardar = function(pelicula){
-
+        
         $cordovaSQLite.execute(db, 'UPDATE peli set nombre=?,año=?,genero=?,sinopsis=?,actores=? where id = ?', [pelicula.nombre,pelicula.año,pelicula.genero,pelicula.sinopsis,pelicula.actores,pelicula.id])
         .then(function(result) {
             $scope.statusMessage = "Registro guardado!";
         }, function(error) {
             $scope.statusMessage = "Error al guardar: " + error.message;
         })
-
-
-       // console.log("NOMBRE: "+persona.nombre);
-        //console.log("ID: "+persona.id);
+        
+        console.log("NOMBRE: "+pelicula.nombre);
+        console.log("ID: "+pelicula.id);
     }
-
-
-
+  
+    
+  
 })
 
 .controller('AccountCtrl', function($scope) {
