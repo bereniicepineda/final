@@ -77,7 +77,7 @@ angular.module('starter.controllers', [])
   
   $scope.guardar = function(pelicula){
         
-        $cordovaSQLite.execute(db, 'UPDATE peli set nombre=?,añoo=?,genero=?,sinopsisl=?,actores=? where id = ?', [pelicula.nombre,pelicula.año,pelicula.genero,pelicula.sinopsis,pelicula.actores,pelicula.id])
+        $cordovaSQLite.execute(db, 'UPDATE peli set nombre=?,año=?,genero=?,sinopsis=?,actores=? where id = ?', [pelicula.nombre,pelicula.año,pelicula.genero,pelicula.sinopsis,pelicula.actores,pelicula.id])
         .then(function(result) {
             $scope.statusMessage = "Registro guardado!";
         }, function(error) {
