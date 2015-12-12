@@ -25,17 +25,17 @@ angular.module('starter', ['ionic','ngCordova', 'starter.controllers', 'starter.
     //db = $cordovaSQLite.openDB("practica2_agenda.db");
     if(window.cordova)
     {
-     db = $cordovaSQLite.openDB("proyectofinal_peli.db");
+     db = $cordovaSQLite.openDB("final_peli.db");
     } else {
-      db = window.openDatabase("proyectofinal_peli.db", "1", "Aplicacion", -1);
+      db = window.openDatabase("final_peli.db", "1", "Aplicacion", -1);
     }
-
+    
     $cordovaSQLite.execute(db, 'CREATE TABLE IF NOT EXISTS peli (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre varchar(255),año varchar(255),genero varchar(255),sinopsis varchar(255),actores varchar(255))');
-
+    
 
   });
-
-
+  
+  
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
