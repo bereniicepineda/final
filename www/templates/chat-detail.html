@@ -1,52 +1,58 @@
-<ion-view view-title="Agregar pelicula">
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Editar pelicula">
   <ion-content class="padding">
-
+    
     <form name="agregarForm" novalidate>
     <div class="list">
     <label class="item item-input">
       <span class="input-label">Nombre</span>
-      <input type="text" name="nombre" ng-model="pelicula[0].nombre" required>
-   </label>
-
-   <label class="item item-input">
-      <span class="input-label">Año</span>
-      <input type="text" name="año" ng-model="pelicula[0].año"  required>
-   </label>
-
-   <label class="item item-input">
-      <span class="input-label">Genero</span>
-      <input type="text" name="genero" ng-model="pelicula[0].genero" required >
-   </label>
-
-   <label class="item item-input">
-      <span class="input-label">Sinopsis</span>
-      <input type="text" name="sinopsis" ng-model="pelicula[0].sinopsis" required >
+      <input type="text" name="nombre"  ng-model="pelicula[0].nombre" required>
    </label>
    
    <label class="item item-input">
+      <span class="input-label">Año</span>
+      <input type="text" name="año" ng-model="pelicula[0].año" required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label">Genero</span>
+      <input type="tel" name="genero" ng-model="pelicula[0].genero"  required>
+   </label>
+   
+   <label class="item item-input">
+      <span class="input-label">Sinopsis</span>
+      <input type="text" name="sinopsis" ng-model="pelicula[0].sinopsis" required>
+   </label>
+   
+    <label class="item item-input">
       <span class="input-label">Actores</span>
-      <input type="text" name="actores" ng-model="pelicula[0].actores" required >
+      <input type="text" name="actores" ng-model="pelicula[0].actores" required>
    </label>
    
    
    </div>
-
+   
    <div class="padding">
-        <p ng-show="agregarForm.nombre.$error.required">Escriba el nombre de la pelicula</p>
-        <p ng-show="agregarForm.año.$error.required">Escriba el año de la pelicula</p>
-        <p ng-show="agregarForm.genero.$error.required">Escriba el genero de la pelicula</p>
+        <p ng-show="agregarForm.nombre.$error.required">Escriba el nombre</p>
+        <p ng-show="agregarForm.año.$error.required">Escriba el año</p>
+        <p ng-show="agregarForm.genero.$error.required">Escriba el genero</p>
         <p ng-show="agregarForm.sinopsis.$error.required">Escriba la sinopsis</p>
-        <p ng-show="agregarForm.actores.$error.required">Escriba los actores</p>
+         <p ng-show="agregarForm.actores.$error.required">Escriba los actores</p>
         <p>{{ statusMessage }}</p>
     </div>
-
-<input type="hidden" name= "id" ng-model="pelicula[0].id">
-
+    
+    <input type="hidden" name="id" ng-model="pelicula[0].id">
+   
    <button type="button" class="button icon-left ion-compose button-positive" ng-disabled="agregarForm.$invalid" ng-click="guardar(pelicula[0])">
       Guardar
    </button>
-
+   
    </form>
-
+    
   </ion-content>
 </ion-view>
