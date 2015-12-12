@@ -1,9 +1,9 @@
 <ion-view view-title="Chats">
-  <ion-nav-buttons side="primary">
+<ion-nav-buttons side="primary">
       <button class="button" ng-click="getAll()">
         Recarga
       </button>
-  </ion-nav-buttons>
+  </ion-nav-buttons>  
   <ion-content>
     <ion-list>
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
@@ -11,7 +11,6 @@
         <p>{{chat.genero}}</p>
         <p>{{chat.sinopsis}}</p>
         <p>{{chat.actores}}</p>
-        
         <i class="icon ion-chevron-right icon-accessory"></i>
 
         <ion-option-button class="button-assertive" ng-click="remove(chat)">
