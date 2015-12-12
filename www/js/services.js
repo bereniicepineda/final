@@ -7,7 +7,7 @@ angular.module('starter.services', [])
   var chats = [];
   var chatObj = "0";
 
-
+  
   return {
     all: function() {
 
@@ -18,7 +18,7 @@ angular.module('starter.services', [])
           function(result) {
              if (result.rows.length > 0) {
                       for(var i = 0; i < result.rows.length; i++)
-                      {
+                      { 
                         chats.push({"id":result.rows.item(i).id,
                                     "nombre":result.rows.item(i).nombre,
                                     "año":result.rows.item(i).año,
@@ -45,25 +45,25 @@ angular.module('starter.services', [])
           statusMessage = "Error: " + error.message;
       });
     },
-
+    
     get: function(chatId) {
 
         chats = [];
-
+        
         $cordovaSQLite.execute(db, 'SELECT * FROM peli where id = ?',[chatId])
        .then(
           function(result) {
-
+               
              if (result.rows.length > 0) {
                         chats.push({"id":result.rows.item(0).id,
                                     "nombre":result.rows.item(0).nombre,
                                     "año":result.rows.item(0).año,
                                     "genero":result.rows.item(0).genero,
                                     "sinopsis":result.rows.item(0).sinopsis,
-                                    "actores":result.rows.item(0).actores});
-
+                                    "actores":result.rows.item(0).actores});                 
+                
                     }
-
+                    
                 },
                 function(error) {
                     statusMessage = "Error on loading: " + error.message;
