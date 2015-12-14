@@ -16,7 +16,7 @@
    
    <label class="item item-input">
       <span class="input-label">Año</span>
-      <input type="text" name="año" ng-model="pelicula[0].año" required>
+      <input type="text" name="ano" ng-model="pelicula[0].ano" required>
    </label>
    
    <label class="item item-input">
@@ -39,7 +39,7 @@
    
    <div class="padding">
         <p ng-show="agregarForm.nombre.$error.required">Escriba el nombre</p>
-        <p ng-show="agregarForm.año.$error.required">Escriba el año</p>
+        <p ng-show="agregarForm.ano.$error.required">Escriba el año</p>
         <p ng-show="agregarForm.genero.$error.required">Escriba el genero</p>
         <p ng-show="agregarForm.sinopsis.$error.required">Escriba la sinopsis</p>
          <p ng-show="agregarForm.actores.$error.required">Escriba los actores</p>
