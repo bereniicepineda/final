@@ -21,7 +21,7 @@ angular.module('starter.services', [])
                       { 
                         chats.push({"id":result.rows.item(i).id,
                                     "nombre":result.rows.item(i).nombre,
-                                    "año":result.rows.item(i).año,
+                                    "ano":result.rows.item(i).ano,
                                     "genero":result.rows.item(i).genero,
                                     "sinopsis":result.rows.item(i).sinopsis,
                                      "actores":result.rows.item(i).actores});
@@ -57,7 +57,7 @@ angular.module('starter.services', [])
              if (result.rows.length > 0) {
                         chats.push({"id":result.rows.item(0).id,
                                     "nombre":result.rows.item(0).nombre,
-                                    "año":result.rows.item(0).año,
+                                    "ano":result.rows.item(0).ano,
                                     "genero":result.rows.item(0).genero,
                                     "sinopsis":result.rows.item(0).sinopsis,
                                     "actores":result.rows.item(0).actores});                 
