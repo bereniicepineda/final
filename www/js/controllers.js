@@ -11,7 +11,7 @@ angular.module('starter.controllers', [])
     
     $scope.guardar = function(pelicula){
         
-        $cordovaSQLite.execute(db, 'INSERT INTO peli (nombre,año,genero,sinopsis,actores) VALUES (?,?,?,?,?)', [pelicula.nombre,pelicula.año,pelicula.genero,pelicula.sinopsis,pelicula.actores])
+        $cordovaSQLite.execute(db, 'INSERT INTO peli (nombre,ano,genero,sinopsis,actores) VALUES (?,?,?,?,?)', [pelicula.nombre,pelicula.ano,pelicula.genero,pelicula.sinopsis,pelicula.actores])
         .then(function(result) {
             $scope.statusMessage = "Registro guardado!";
         }, function(error) {
@@ -77,7 +77,7 @@ angular.module('starter.controllers', [])
   
   $scope.guardar = function(pelicula){
         
-        $cordovaSQLite.execute(db, 'UPDATE peli set nombre=?,año=?,genero=?,sinopsis=?,actores=? where id = ?', [pelicula.nombre,pelicula.año,pelicula.genero,pelicula.sinopsis,pelicula.actores,pelicula.id])
+        $cordovaSQLite.execute(db, 'UPDATE peli set nombre=?,ano=?,genero=?,sinopsis=?,actores=? where id = ?', [pelicula.nombre,pelicula.ano,pelicula.genero,pelicula.sinopsis,pelicula.actores,pelicula.id])
         .then(function(result) {
             $scope.statusMessage = "Registro guardado!";
         }, function(error) {
